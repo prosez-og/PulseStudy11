@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PulseStudy — Ultimate Student Dashboard</title>
+<script>
+  // Configure Tailwind CSS to use class-based dark mode
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.5);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 58, 237, 0.8);
+  }
+
+  /* Rank Badge Animations */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes glow-platinum {
+    0%, 100% { box-shadow: 0 0 5px #e5e4e2, 0 0 10px #e5e4e2; }
+    50% { box-shadow: 0 0 15px #e5e4e2, 0 0 25px #e5e4e2; }
+  }
+  
+  @keyframes glow-diamond {
+    0%, 100% { box-shadow: 0 0 5px #b9f2ff, 0 0 10px #b9f2ff; }
+    50% { box-shadow: 0 0 15px #b9f2ff, 0 0 25px #b9f2ff; }
+  }
+  
+  @keyframes pulse-master {
+    0% { transform: scale(1); box-shadow: 0 0 5px #c000c0; }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px #c000c0; }
+    100% { transform: scale(1); box-shadow: 0 0 5px #c000c0; }
+  }
+
+  @keyframes swirl {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Pomodoro Theme Animations */
+  @keyframes animated-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animated-gradient {
+    background-size: 400% 400%;
+    animation: animated-gradient 15s ease infinite;
+  }
+
+  /* AI Typing Animation */
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  .blinking-cursor {
+    animation: blink 1s step-end infinite;
+    font-weight: bold;
+    display: inline-block;
+    transform: translateY(-1px);
+  }
+
+  .shimmer {
+    background-image: linear-gradient(
+      -60deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+  }
+  
+  .glow-platinum {
+      animation: glow-platinum 2.5s ease-in-out infinite;
+  }
+
+  .glow-diamond {
+      animation: glow-diamond 2.5s ease-in-out infinite;
+  }
+
+  .pulse-master {
+      animation: pulse-master 2s ease-in-out infinite;
+  }
+  
+  .swirl-special, .swirl-elite {
+      background-size: 300% 300%;
+      animation: swirl 4s ease infinite;
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "pdfjs-dist": "https://aistudiocdn.com/pdfjs-dist@^4.5.136",
+    "pdf-lib": "https://aistudiocdn.com/pdf-lib@^1.17.1"
+  }
+}
+</script>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-gradient-to-b dark:from-[#031124] dark:to-[#06070a]">
+  <div id="root"></div>
+</body>
+</html>
